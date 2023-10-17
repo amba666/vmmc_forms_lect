@@ -1,0 +1,171 @@
+{
+  "count": "1",
+  "encounter_type": "vmmc",
+  "mother": {
+    "encounter_type": "vmmc"
+  },
+  "validate_on_submit": true,
+  "show_errors_on_submit": true,
+  "entity_id": "",
+  "relational_id": "",
+  "metadata": {
+    "start": {
+      "openmrs_entity_parent": "",
+      "openmrs_entity": "concept",
+      "openmrs_data_type": "start",
+      "openmrs_entity_id": "163137AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+    },
+    "end": {
+      "openmrs_entity_parent": "",
+      "openmrs_entity": "concept",
+      "openmrs_data_type": "end",
+      "openmrs_entity_id": "163138AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+    },
+    "today": {
+      "openmrs_entity_parent": "",
+      "openmrs_entity": "encounter",
+      "openmrs_entity_id": "encounter_date"
+    },
+    "deviceid": {
+      "openmrs_entity_parent": "",
+      "openmrs_entity": "concept",
+      "openmrs_data_type": "deviceid",
+      "openmrs_entity_id": "163149AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+    },
+    "subscriberid": {
+      "openmrs_entity_parent": "",
+      "openmrs_entity": "concept",
+      "openmrs_data_type": "subscriberid",
+      "openmrs_entity_id": "163150AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+    },
+    "simserial": {
+      "openmrs_entity_parent": "",
+      "openmrs_entity": "concept",
+      "openmrs_data_type": "simserial",
+      "openmrs_entity_id": "163151AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+    },
+    "phonenumber": {
+      "openmrs_entity_parent": "",
+      "openmrs_entity": "concept",
+      "openmrs_data_type": "phonenumber",
+      "openmrs_entity_id": "163152AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+    },
+    "encounter_location": "",
+    "look_up": {
+      "entity_id": "",
+      "value": ""
+    }
+  },
+  "global": {},
+  "step1": {
+    "title": "Obstestric History",
+    "fields": [
+      {
+        "key": "total_number_of_pregnancies",
+        "type": "edit_text",
+        "openmrs_entity": "concept",
+        "openmrs_entity_id": "total_number_of_pregnancies",
+        "openmrs_entity_parent": "",
+        "edit_type": "number",
+        "hint": "Total number of pregnancies",
+        "v_required": {
+          "value": "true",
+          "err": "Enter the total number of pregnancies"
+        }
+      },
+      {
+        "key": "number_of_miscarriages",
+        "type": "edit_text",
+        "openmrs_entity": "concept",
+        "openmrs_entity_id": "number_of_miscarriages",
+        "openmrs_entity_parent": "",
+        "edit_type": "number",
+        "hint": "Number of miscarriages ",
+        "v_required": {
+          "value": "true",
+          "err": "Enter  number of miscarriages"
+        }
+      },
+      {
+        "key": "number_of_still_births",
+        "type": "edit_text",
+        "openmrs_entity": "concept",
+        "openmrs_entity_id": "number_of_still_births",
+        "openmrs_entity_parent": "",
+        "edit_type": "number",
+        "hint": "Number of still births ",
+        "v_required": {
+          "value": "true",
+          "err": "Enter  number of still births"
+        }
+      },
+      {
+        "key": "number_of_live_births",
+        "type": "edit_text",
+        "openmrs_entity": "concept",
+        "openmrs_entity_id": "number_of_live_births",
+        "openmrs_entity_parent": "",
+        "edit_type": "number",
+        "hint": "Number of live births ",
+        "v_required": {
+          "value": "true",
+          "err": "Enter  number of live births"
+        }
+      },
+      {
+        "key": "number_of_children_alive",
+        "type": "edit_text",
+        "openmrs_entity": "concept",
+        "openmrs_entity_id": "number_of_children_alive",
+        "openmrs_entity_parent": "",
+        "edit_type": "number",
+        "hint": "Number of children alive",
+        "v_required": {
+          "value": "true",
+          "err": "Enter  number of children alive"
+        }
+      },
+      {
+        "key": "date_of_last_delivery",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "concept",
+        "openmrs_entity_id": "date_of_last_delivery",
+        "type": "date_picker",
+        "hint": "Date of last delivery",
+        "max_date": "today",
+        "v_required": {
+          "value": "true",
+          "err": "Date of last delivery required"
+        }
+      },
+      {
+        "key": "is_the_client_breastfeeding",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "concept",
+        "openmrs_entity_id": "is_the_client_breastfeeding",
+        "type": "native_radio",
+        "label": "Is the client breastfeeding?",
+
+        "options": [
+          {
+            "key": "yes",
+            "text": "Yes",
+            "openmrs_entity": "concept",
+            "openmrs_entity_id": "is_the_client_breastfeeding"
+          },
+          {
+            "key": "no",
+            "text": "No",
+            "openmrs_entity": "concept",
+            "openmrs_entity_id": "is_the_client_breastfeeding"
+          }
+        ],
+        "v_required": {
+          "value": "true",
+          "err": "Must select one of the options"
+        }
+      }
+    ]
+  }
+}
+

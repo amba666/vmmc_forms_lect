@@ -1,0 +1,168 @@
+{
+  "count": "1",
+  "encounter_type": "vmmc",
+  "mother": {
+    "encounter_type": "vmmc"
+  },
+  "validate_on_submit": true,
+  "show_errors_on_submit": true,
+  "entity_id": "",
+  "relational_id": "",
+  "metadata": {
+    "start": {
+      "openmrs_entity_parent": "",
+      "openmrs_entity": "concept",
+      "openmrs_data_type": "start",
+      "openmrs_entity_id": "163137AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+    },
+    "end": {
+      "openmrs_entity_parent": "",
+      "openmrs_entity": "concept",
+      "openmrs_data_type": "end",
+      "openmrs_entity_id": "163138AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+    },
+    "today": {
+      "openmrs_entity_parent": "",
+      "openmrs_entity": "encounter",
+      "openmrs_entity_id": "encounter_date"
+    },
+    "deviceid": {
+      "openmrs_entity_parent": "",
+      "openmrs_entity": "concept",
+      "openmrs_data_type": "deviceid",
+      "openmrs_entity_id": "163149AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+    },
+    "subscriberid": {
+      "openmrs_entity_parent": "",
+      "openmrs_entity": "concept",
+      "openmrs_data_type": "subscriberid",
+      "openmrs_entity_id": "163150AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+    },
+    "simserial": {
+      "openmrs_entity_parent": "",
+      "openmrs_entity": "concept",
+      "openmrs_data_type": "simserial",
+      "openmrs_entity_id": "163151AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+    },
+    "phonenumber": {
+      "openmrs_entity_parent": "",
+      "openmrs_entity": "concept",
+      "openmrs_data_type": "phonenumber",
+      "openmrs_entity_id": "163152AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+    },
+    "encounter_location": "",
+    "look_up": {
+      "entity_id": "",
+      "value": ""
+    }
+  },
+  "global": {},
+  "step1": {
+    "title": "Obstestric History",
+    "fields": [
+      {
+        "key": "any_significant_physical_abnormality_on_general_examination",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "",
+        "openmrs_entity_id": "any_significant_physical_abnormality_on_general_examination",
+        "type": "check_box",
+        "label": "Any physiological symptoms?",
+        "label_text_style": "bold",
+        "text_color": "#000000",
+        "exclusive": [
+          "none"
+        ],
+        "options": [
+          {
+            "key": "pallor",
+            "text": "Pallor",
+            "openmrs_entity": "concept",
+            "openmrs_entity_id": "any_significant_physical_abnormality_on_general_examination",
+            "openmrs_entity_parent": ""
+          },
+          {
+            "key": "jaundice",
+            "text": "Jaundice",
+            "openmrs_entity": "concept",
+            "openmrs_entity_id": "any_significant_physical_abnormality_on_general_examination",
+            "openmrs_entity_parent": ""
+          },
+          {
+            "key": "petechiae_or_ecchymosis_or_epistaxis",
+            "text": "Petechiae/Ecchymosis/Epistaxis",
+            "openmrs_entity": "concept",
+            "openmrs_entity_id": "any_significant_physical_abnormality_on_general_examination",
+            "openmrs_entity_parent": ""
+          },
+          {
+            "key": "joint_deformity",
+            "text": "Joint deformity(Joint swelling or tenderness)",
+            "openmrs_entity": "concept",
+            "openmrs_entity_id": "any_significant_physical_abnormality_on_general_examination",
+            "openmrs_entity_parent": ""
+          },
+          {
+            "key": "others",
+            "text": "Others (Specify)",
+            "openmrs_entity": "concept",
+            "openmrs_entity_id": "any_significant_physical_abnormality_on_general_examination",
+            "openmrs_entity_parent": ""
+          },
+          {
+            "key": "none",
+            "text": "None",
+            "value": false,
+            "openmrs_entity": "concept",
+            "openmrs_entity_id": "any_significant_physical_abnormality_on_general_examination",
+            "openmrs_entity_parent": ""
+          }
+        ]
+      },
+      {
+        "key": "client_weight",
+        "type": "edit_text",
+        "hint": "Client's weight (KG)",
+        "openmrs_entity": "concept",
+        "openmrs_entity_id": "client_weight",
+        "openmrs_entity_parent": "",
+        "v_numeric": {
+          "value": "true",
+          "err": "use numbers"
+        }
+      },
+      {
+        "key": "client_height",
+        "type": "edit_text",
+        "hint": "Client's (CM)",
+        "openmrs_entity": "concept",
+        "openmrs_entity_id": "client_height",
+        "openmrs_entity_parent": "",
+        "v_numeric": {
+          "value": "true",
+          "err": "use numbers"
+        }
+      },
+      {
+        "key": "bmi",
+        "type": "edit_text",
+        "hint": "Body mass index (BMI) NaN",
+        "openmrs_entity": "concept",
+        "openmrs_entity_id": "bmi",
+        "openmrs_entity_parent": "",
+        "v_numeric": {
+          "value": "true",
+          "err": "use numbers"
+
+        },
+        "calculation": {
+          "script": "if (values['client_weight'] && values['client_height']) { return values['client_weight'] / ((values['client_height'] / 100) * (values['client_height'] / 100)); } else { return null; }",
+          "rules-engine": {
+            "ex-rules": {
+              "rules-file": "sample-relevance-rules.yml"
+            }
+          }
+        }
+      }
+    ]
+  }
+}

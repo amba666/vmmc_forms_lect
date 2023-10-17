@@ -1,0 +1,165 @@
+{
+  "count": "1",
+  "encounter_type": "vmmc",
+  "mother": {
+    "encounter_type": "vmmc"
+  },
+  "validate_on_submit": true,
+  "show_errors_on_submit": true,
+  "entity_id": "",
+  "relational_id": "",
+  "metadata": {
+    "start": {
+      "openmrs_entity_parent": "",
+      "openmrs_entity": "concept",
+      "openmrs_data_type": "start",
+      "openmrs_entity_id": "163137AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+    },
+    "end": {
+      "openmrs_entity_parent": "",
+      "openmrs_entity": "concept",
+      "openmrs_data_type": "end",
+      "openmrs_entity_id": "163138AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+    },
+    "today": {
+      "openmrs_entity_parent": "",
+      "openmrs_entity": "encounter",
+      "openmrs_entity_id": "encounter_date"
+    },
+    "deviceid": {
+      "openmrs_entity_parent": "",
+      "openmrs_entity": "concept",
+      "openmrs_data_type": "deviceid",
+      "openmrs_entity_id": "163149AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+    },
+    "subscriberid": {
+      "openmrs_entity_parent": "",
+      "openmrs_entity": "concept",
+      "openmrs_data_type": "subscriberid",
+      "openmrs_entity_id": "163150AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+    },
+    "simserial": {
+      "openmrs_entity_parent": "",
+      "openmrs_entity": "concept",
+      "openmrs_data_type": "simserial",
+      "openmrs_entity_id": "163151AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+    },
+    "phonenumber": {
+      "openmrs_entity_parent": "",
+      "openmrs_entity": "concept",
+      "openmrs_data_type": "phonenumber",
+      "openmrs_entity_id": "163152AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+    },
+    "encounter_location": "",
+    "look_up": {
+      "entity_id": "",
+      "value": ""
+    }
+  },
+
+  "global": {},
+
+  "step1": {
+    "title": "Vmmc",
+    "fields": [
+      {
+        "key": "servirce_delivery_approach",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "concept",
+        "openmrs_entity_id": "",
+        "type": "native_radio",
+        "options": [
+          {
+            "key": "static/routine",
+            "text": "Static/Routine"
+          },
+          {
+            "key": "outreach/mobile",
+            "text": "Outreach/Mobile"
+          }
+        ],
+        "v_required": {
+          "value": "true",
+          "err": "Select delivery approach"
+        }
+      },
+      {
+        "key": "vmmc_client_id",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "concept",
+        "openmrs_entity_id": "vmmc_client_id",
+        "entity_id": "vmmc_client_id",
+        "type": "masked_edit_text",
+        "hint": "VMMC Client Id e.g 108627-1 1234 2023",
+        "mask": "######-#-####-####",
+        "mask_hint": " 108627-1",
+        "input_type": "number",
+        "allowed_chars": "0123456789",
+        "v_required": {
+          "value": "true",
+          "err": "Enter VMMC Client Id"
+        }
+      },
+      {
+        "key": "referred_from",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "concept",
+        "openmrs_entity_id": "referred_from",
+        "type": "native_radio",
+        "options": [
+          {
+            "key": "self_referral",
+            "text": "Self-referral"
+          },
+          {
+            "key": "chw",
+            "text": "CHW"
+          },
+          {
+            "key": "opd",
+            "text": "OPD"
+          },
+          {
+            "key": "ipd",
+            "text": "IPD"
+          },
+          {
+            "key": "hts",
+            "text": "HTS"
+          },
+          {
+            "key": "rchs",
+            "text": "RCHS"
+          },
+          {
+            "key": "radio",
+            "text": "Radio"
+          },
+          {
+            "key": "others",
+            "text": "Others(specify)"
+          }
+        ],
+        "v_required": {
+          "value": "true",
+          "err": "Select delivery approach"
+        },
+        "relevance": {
+          "rules-engine": {
+            "ex-rules": {
+              "rules-file": "sample-relevance-rules.yml"
+            }
+          }
+        }
+      },
+      {
+        "key": "others",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "concept",
+        "openmrs_entity_id": "referred_from",
+        "type": "edit_text",
+        "hint": "Specify referred where client referred"
+      }
+    ]
+  }
+}

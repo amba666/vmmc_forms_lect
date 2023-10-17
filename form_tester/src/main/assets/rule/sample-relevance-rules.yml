@@ -189,3 +189,19 @@ priority: 1
 condition: "step1_toaster26_hidden > 2"
 actions:
     - "isRelevant = true"
+---
+#rule ya kule referred from
+name: step1_referred_from
+description: Referred from
+priority: 1
+condition: "step1_referred_from.equalsIgnoreCase('others') "
+actions:
+    - "isRelevant = true"
+
+---
+name: step1_bmi
+description: BMI should be visible once height and weight are filled
+priority: 1
+condition: "!step1_weight.equals('') && !step1_height.equals('')"
+actions:
+    - "isRelevant = true"
